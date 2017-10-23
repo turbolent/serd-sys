@@ -1,0 +1,18 @@
+[package]
+name = "serd-sys"
+version = "0.1.0"
+authors = ["Bastian Müller <bastian@turbolent.com>"]
+description = "Bindings to serd, a lightweight RDF syntax library."
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/turbolent/serd-sys"
+build = "build.rs"
+keywords = ["N-Triples", "Turtle", "RDF", "parser"]
+categories = ["parsing", "data-structures", "api-bindings"]
+
+[dependencies]
+libc = "0.2.32"
+
+[build-dependencies]
+bindgen = "0.26.3"
+pkg-config = "0.3.9"
