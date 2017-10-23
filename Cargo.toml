@@ -2,7 +2,7 @@
 name = "serd-sys"
 version = "0.1.0"
 authors = ["Bastian Müller <bastian@turbolent.com>"]
-description = "Bindings to serd, a lightweight RDF syntax library."
+description = "Bindings to Serd, a lightweight RDF syntax library."
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/turbolent/serd-sys"
