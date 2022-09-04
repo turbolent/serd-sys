@@ -1,6 +1,5 @@
 extern crate bindgen;
 
-use bindgen::EnumVariation;
 use std::{env, path::PathBuf};
 
 fn main() {
@@ -13,7 +12,6 @@ fn main() {
     }
 
     let bindings = builder
-        .default_enum_style(EnumVariation::Rust { non_exhaustive: true })
         .blocklist_type("max_align_t")
         .blocklist_item("SERD_URI_NULL")
         .blocklist_item("SERD_NODE_NULL")

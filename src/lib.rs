@@ -18,7 +18,7 @@ pub const SERD_NODE_NULL: SerdNode = SerdNode {
     n_bytes: 0,
     n_chars: 0,
     flags: 0,
-    type_: SerdType::SERD_NOTHING,
+    type_: SerdType_SERD_NOTHING,
 };
 
 #[cfg(test)]
@@ -51,9 +51,9 @@ mod tests {
             let p = unsafe { *predicate };
             let o = unsafe { *object };
 
-            assert_eq!(s.type_, SerdType::SERD_URI);
-            assert_eq!(p.type_, SerdType::SERD_URI);
-            assert_eq!(o.type_, SerdType::SERD_URI);
+            assert_eq!(s.type_, SerdType_SERD_URI);
+            assert_eq!(p.type_, SerdType_SERD_URI);
+            assert_eq!(o.type_, SerdType_SERD_URI);
 
             assert_eq!(
                 unsafe { CStr::from_ptr(s.buf as *const _) }.to_str().unwrap(),
@@ -71,7 +71,7 @@ mod tests {
             let count: &mut i32 = unsafe { &mut *(handle as *mut i32) };
             *count += 1;
 
-            SerdStatus::SERD_SUCCESS
+            SerdStatus_SERD_SUCCESS
         }
 
         unsafe {
@@ -87,7 +87,7 @@ mod tests {
             let mut count = 0;
 
             let reader = serd_reader_new(
-                SerdSyntax::SERD_NTRIPLES,
+                SerdSyntax_SERD_NTRIPLES,
                 &mut count as *mut _ as *mut ::std::os::raw::c_void,
                 None,
                 None,
