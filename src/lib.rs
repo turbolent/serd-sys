@@ -4,7 +4,10 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-const SERD_NULL_CHUNK: SerdChunk = SerdChunk { buf: std::ptr::null(), len: 0 };
+const SERD_NULL_CHUNK: SerdChunk = SerdChunk {
+    buf: std::ptr::null(),
+    len: 0,
+};
 pub const SERD_URI_NULL: SerdURI = SerdURI {
     scheme: SERD_NULL_CHUNK,
     authority: SERD_NULL_CHUNK,
@@ -56,15 +59,21 @@ mod tests {
             assert_eq!(o.type_, SerdType_SERD_URI);
 
             assert_eq!(
-                unsafe { CStr::from_ptr(s.buf as *const _) }.to_str().unwrap(),
+                unsafe { CStr::from_ptr(s.buf as *const _) }
+                    .to_str()
+                    .unwrap(),
                 "urn:foo"
             );
             assert_eq!(
-                unsafe { CStr::from_ptr(p.buf as *const _) }.to_str().unwrap(),
+                unsafe { CStr::from_ptr(p.buf as *const _) }
+                    .to_str()
+                    .unwrap(),
                 "urn:bar"
             );
             assert_eq!(
-                unsafe { CStr::from_ptr(o.buf as *const _) }.to_str().unwrap(),
+                unsafe { CStr::from_ptr(o.buf as *const _) }
+                    .to_str()
+                    .unwrap(),
                 "urn:baz"
             );
 
