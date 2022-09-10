@@ -7,7 +7,7 @@ fn main() {
 
     let mut builder = bindgen::Builder::default().header("wrapper.h");
 
-    for ref path in &lib.include_paths {
+    for path in &lib.include_paths {
         builder = builder.clang_arg(format!("-I{}", path.display()));
     }
 
